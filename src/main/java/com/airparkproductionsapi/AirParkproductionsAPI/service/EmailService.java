@@ -1,6 +1,6 @@
 package com.airparkproductionsapi.AirParkproductionsAPI.service;
 
-import com.airparkproductionsapi.AirParkproductionsAPI.dto.email.EmailDto;
+import com.airparkproductionsapi.AirParkproductionsAPI.dto.EmailDto;
 
 public interface EmailService {
 

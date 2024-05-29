@@ -1,6 +1,6 @@
 package com.airparkproductionsapi.AirParkproductionsAPI.controller;
 
-import com.airparkproductionsapi.AirParkproductionsAPI.dto.email.EmailDto;
+import com.airparkproductionsapi.AirParkproductionsAPI.dto.EmailDto;
 import com.airparkproductionsapi.AirParkproductionsAPI.service.EmailService;
 import org.springframework.web.bind.annotation.*;
 
