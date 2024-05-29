@@ -1,0 +1,34 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Branche de votre projet à partir de laquelle vous déployez
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '22' # Version de Java à utiliser, assurez-vous qu'elle correspond à la version requise par votre application Spring Boot
+
+      - name: Build with Maven
+        run: mvn clean package # Commande pour construire votre application Spring Boot avec Maven
+
+      - name: Deploy
+        # Utilisez une action appropriée pour déployer votre fichier JAR sur votre serveur ou un autre emplacement de déploiement
+        # Vous pouvez utiliser une action existante ou créer votre propre script de déploiement personnalisé
+        # Assurez-vous de remplacer les paramètres et les valeurs par ceux de votre propre environnement de déploiement
+        # Par exemple, si vous déployez sur un serveur distant via SSH, vous pouvez utiliser une action comme 'appleboy/ssh-action'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./target/ # Répertoire contenant le fichier JAR généré par Maven
