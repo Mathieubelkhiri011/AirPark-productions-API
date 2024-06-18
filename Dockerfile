@@ -1,5 +1,5 @@
-# Étape 1 : Construction
-FROM maven:3.8.5-openjdk-22 AS build
+# Etape 1 : Build
+FROM maven:3.8.5-openjdk-17-slim AS build
 
 # Définir le répertoire de travail
 WORKDIR /app
