@@ -13,8 +13,6 @@ RUN mvn dependency:go-offline -B
 # Copier le reste du projet dans le conteneur
 COPY . .
 
-RUN mvn -B -f pom.xml clean package -DskipTests -Dmaven.compiler.memoryInitialHeapSize=256m -Dmaven.compiler.memoryMaximumHeapSize=512m
-
 # Compiler le projet et créer le fichier JAR avec des logs détaillés
 RUN mvn clean package -DskipTests -e -X
 
