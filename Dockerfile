@@ -14,7 +14,7 @@ RUN mvn dependency:go-offline -B
 COPY . .
 
 # Compiler le projet et créer le fichier JAR avec des logs détaillés
-RUN mvn clean package -DskipTests -e -X
+RUN mvn clean package -DskipTests -e -X > build.log || (cat build.log && exit 1)
 
 # Étape 2 : Exécution
 FROM openjdk:22-jdk-slim
