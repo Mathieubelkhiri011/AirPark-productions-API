@@ -1,0 +1,1 @@
+web: java -jar target/AirPark-productions-API-0.0.1-SNAPSHOT.jar
