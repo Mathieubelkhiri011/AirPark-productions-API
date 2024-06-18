@@ -1,22 +1,28 @@
-# Etape 1 : Build
-FROM maven:3.8.5-openjdk-17-slim AS build
+# Étape 1 : Construction
+FROM maven:3.8.5-openjdk-22 AS build
 
 # Définir le répertoire de travail
 WORKDIR /app
 
-# Copier le projet dans le conteneur
+# Copier le fichier de configuration Maven
+COPY pom.xml .
+
+# Télécharger les dépendances sans construire le projet pour optimiser le cache Docker
+RUN mvn dependency:go-offline -B
+
+# Copier le reste du projet dans le conteneur
 COPY . .
 
 # Compiler le projet et créer le fichier JAR
 RUN mvn clean package -DskipTests
 
-# Etape 2 : Run
-FROM openjdk:17-jdk-slim
+# Étape 2 : Exécution
+FROM openjdk:22-jdk-slim
 
 # Définir le répertoire de travail
 WORKDIR /app
 
-# Copier le fichier JAR de l'étape de build
+# Copier le fichier JAR de l'étape de construction
 COPY --from=build /app/target/*.jar app.jar
 
 # Exposer le port 8080
