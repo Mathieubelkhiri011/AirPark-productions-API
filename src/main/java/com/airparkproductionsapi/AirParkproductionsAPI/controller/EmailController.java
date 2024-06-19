@@ -15,6 +15,11 @@ public class EmailController {
         this.emailService = emailService;
     }
 
+    @GetMapping
+    public String test() {
+        return "test réussi ! ";
+    }
+
     @PostMapping
     public void send(@RequestBody EmailDto emailDto) {
         this.emailService.sendEmail(emailDto);
