@@ -2,6 +2,7 @@ package com.airparkproductionsapi.AirParkproductionsAPI.controller;
 
 import com.airparkproductionsapi.AirParkproductionsAPI.dto.EmailDto;
 import com.airparkproductionsapi.AirParkproductionsAPI.service.EmailService;
+import jakarta.mail.MessagingException;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -21,7 +22,7 @@ public class EmailController {
     }
 
     @PostMapping
-    public void send(@RequestBody EmailDto emailDto) {
+    public void send(@RequestBody EmailDto emailDto) throws MessagingException {
         this.emailService.sendEmail(emailDto);
     }
 }
