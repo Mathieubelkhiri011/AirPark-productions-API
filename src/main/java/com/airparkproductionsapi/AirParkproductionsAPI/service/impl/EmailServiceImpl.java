@@ -35,7 +35,7 @@ public class EmailServiceImpl implements EmailService {
         context.setVariable("senderEmail", emailDetails.getFrom());
         context.setVariable("senderFirstName", emailDetails.getFirstname());
         context.setVariable("senderLastName", emailDetails.getLastname());
-        context.setVariable("senderSubjet", emailDetails.getSubject());
+        context.setVariable("senderType", emailDetails.getType());
         context.setVariable("senderPhone", emailDetails.getPhone());
         context.setVariable("senderBody", emailDetails.getBody());
 

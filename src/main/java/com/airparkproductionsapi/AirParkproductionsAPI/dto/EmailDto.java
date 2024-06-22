@@ -6,17 +6,17 @@ public class EmailDto {
     private String phone;
     private String lastname;
     private String firstname;
-    private String subject;
+    private String type;
     private String body;
 
     public EmailDto() {}
 
-    public EmailDto(String from, String phone, String lastname, String firstname, String subject, String body) {
+    public EmailDto(String from, String phone, String lastname, String firstname, String type, String body) {
         this.from = from;
         this.phone = phone;
         this.lastname = lastname;
         this.firstname = firstname;
-        this.subject = subject;
+        this.type = type;
         this.body = body;
     }
 
@@ -36,8 +36,8 @@ public class EmailDto {
         return firstname;
     }
 
-    public String getSubject() {
-        return subject;
+    public String getType() {
+        return type;
     }
 
     public String getBody() {
@@ -51,7 +51,7 @@ public class EmailDto {
                 ", phone=" + phone +
                 ", lastname='" + lastname + '\'' +
                 ", firstname='" + firstname + '\'' +
-                ", subject='" + subject + '\'' +
+                ", type='" + type + '\'' +
                 ", body='" + body + '\'' +
                 '}';
     }
