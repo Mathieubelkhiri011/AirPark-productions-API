@@ -42,7 +42,8 @@ public class EmailServiceImpl implements EmailService {
         String emailContent = templateEngine.process("emailTemplate", context);
 
         helper.setTo(emailReceiver);
-        helper.setSubject(emailDetails.getFrom());
+        helper.setSubject(emailDetails.getType() + " - " + emailDetails.getFirstname() + " " + emailDetails.getLastname());
+        helper.setReplyTo(emailDetails.getFrom());
         helper.setText(emailContent, true);
 
         mailSender.send(message);
