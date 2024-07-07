@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="./src/assets/favicon.png">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AirPark</title>
@@ -10,33 +9,33 @@
 <body style="font-family: Arial, Helvetica, sans-serif; padding: 0px;">
 <div style="box-sizing : border-box; border-radius:5px; background-color:#f2f2f2; padding:20px; width: 100%; max-width: 440px; margin:0 auto;">
     <h1 style="color: #ffc800; width: 100%;">Formulaire de contact</h1>
-    <div style="display: flex; flex-direction: column; gap: 1rem;">
-        <div style="display: flex;">
+    <div>
+        <div style="margin-bottom: 1rem;">
             <label style="margin-right: 0.75rem; margin-left: 0px; text-decoration: underline;">Email :</label>
             <span> [[${senderEmail}]] </span>
         </div>
 
-        <div style="display: flex;">
+        <div style="margin-bottom: 1rem;">
             <label style="margin-right: 0.75rem; margin-left: 0px;text-decoration: underline;">Prénom :</label>
             <span> [[${senderFirstName}]] </span>
         </div>
 
-        <div style="display: flex;">
+        <div style="margin-bottom: 1rem;">
             <label style="margin-right: 0.75rem; margin-left: 0px;text-decoration: underline;">Nom :</label>
             <span> [[${senderLastName}]] </span>
         </div>
 
-        <div style="display: flex;">
+        <div style="margin-bottom: 1rem;">
             <label style="margin-right: 0.75rem; margin-left: 0px;text-decoration: underline;">Type :</label>
             <span> [[${senderType}]] </span>
         </div>
 
-        <div style="display: flex;">
+        <div style="margin-bottom: 1rem;">
             <label style="margin-right: 0.75rem; margin-left: 0px;text-decoration: underline;">Numéro de téléphone :</label>
             <span> [[${senderPhone}]] </span>
         </div>
 
-        <div style="display: flex;">
+        <div>
             <label style="margin-right: 0.75rem; margin-left: 0px;text-decoration: underline;">Message :</label>
             <span> [[${senderBody}]] </span>
         </div>
