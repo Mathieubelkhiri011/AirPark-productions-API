@@ -13,6 +13,7 @@ public class ScheduledTasks {
     @Scheduled(cron = "0 0/5 7-22 * * ?")
     public void performTask() {
         int randomNumber = random.nextInt();
+        System.out.println(randomNumber);
     }
 }
 
