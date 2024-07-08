@@ -17,8 +17,8 @@ public class EmailController {
     }
 
     @GetMapping
-    public String test() {
-        return "test réussi ! ";
+    public String WakeUp() {
+        return "wake up ! ";
     }
 
     @PostMapping
