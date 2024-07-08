@@ -10,7 +10,7 @@ public class ScheduledTasks {
 
     private final Random random = new Random();
 
-    @Scheduled(cron = "0 0/15 7-22 * * ?")
+    @Scheduled(cron = "0 0/5 7-22 * * ?")
     public void performTask() {
         int randomNumber = random.nextInt();
     }
